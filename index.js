@@ -42,7 +42,27 @@ app.post('/create', (req, res) => {
 
 // 編集画面
 app.get('/edit/:id', (req, res) => {
-  res.render('edit.ejs');
+  try {
+    connection.query('SELECT * FROM memo WHERE id = ?', [req.params.id], (error, results) => {
+      res.render('edit.ejs', { item: results[0] });
+    });
+  } catch (e) {
+    console.log(e);
+  }
+});
+
+// 編集API
+app.post('/edit/:id', (req, res) => {
+  const now = new Date();
+  connection.query(
+    'UPDATE memo SET name = ? , update_dt = ? WHERE id = ?',
+    [req.body.name, now, req.params.id],
+    (error, results) => {
+      res.redirect('/');
+    }
+  );
+});
+
 });
 
 app.listen(3000, () => {

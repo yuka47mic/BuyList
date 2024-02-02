@@ -14,13 +14,20 @@
         <a href="/" class="back-btn btn">戻る</a>
       </div>
       <div class="content-wrapper">
-        <form>
-          <label>名　前</label>
-          <input type="text" id="name" name="name" required maxlength="15" />
+        <form action="/edit/<%= item.id %>" method="post">
+          <label>買うもの</label>
+          <input
+            type="text"
+            class="input-name"
+            name="name"
+            required
+            maxlength="15"
+            value="<%= item.name %>"
+          />
+          <div style="text-align: center">
+            <button type="submit" class="register-btn btn">登　録</button>
+          </div>
         </form>
-        <div style="text-align: center">
-          <button type="submit" class="register-btn btn">登　録</button>
-        </div>
       </div>
     </div>
   </body>
