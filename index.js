@@ -63,6 +63,11 @@ app.post('/edit/:id', (req, res) => {
   );
 });
 
+// 削除API
+app.post('/delete/:id', (req, res) => {
+  connection.query('DELETE FROM memo WHERE id = ?', [req.params.id], (error, results) => {
+    res.redirect('/');
+  });
 });
 
 app.listen(3000, () => {
