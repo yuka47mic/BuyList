@@ -1,0 +1,41 @@
+.content-wrapper {
+  margin: 0 80px 120px 80px;
+}
+.new-btn {
+  background-color: #6cb1ff;
+  color: white;
+  width: auto !important;
+  height: fit-content;
+  margin-top: 20px;
+}
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  table-layout: fixed;
+  counter-reset: rowCount;
+}
+table > tbody > tr > td.number {
+  counter-increment: rowCount;
+}
+table > tbody > tr > td:first-child::before {
+  content: counter(rowCount);
+}
+tr {
+  width: 100%;
+}
+th {
+  padding: 25px;
+  border-bottom: solid 5px #748ca5;
+}
+td {
+  border-bottom: solid 1px #748ca5;
+}
+.edit-btn {
+  background-color: #7ea8d9;
+  color: white;
+}
+.number,
+.name {
+  padding: 10px 25px;
+}
