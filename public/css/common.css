@@ -3,6 +3,7 @@
 html,
 body {
   height: 100%;
+  letter-spacing: 3px;
 }
 body {
   display: flex;
@@ -13,20 +14,10 @@ body {
 label,
 input {
   display: block;
-  width: 100%;
 }
 label {
   font-size: 20px;
   margin-bottom: 10px;
-}
-input {
-  height: 55px;
-  border: solid 1px #bababa;
-  font-size: 20px;
-}
-input:focus {
-  border: solid 1px #009dff;
-  outline: none;
 }
 form {
   margin: 20px 70px;
@@ -50,17 +41,15 @@ form {
   height: 100%;
 }
 .btn {
-  height: 50px;
   margin: 10px 0;
-  padding: 12px 23px;
+  padding: 12px 35px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
   border: none;
-  border-radius: 0;
-  width: 110px;
+  border-radius: 5px;
 }
 .back-btn {
   background-color: #eaeaea;
@@ -70,8 +59,20 @@ form {
   margin-top: 20px;
 }
 .register-btn {
-  margin-top: 30px;
+  margin-top: 45px;
   width: 270px;
   background-color: #7ea8d9;
   color: white;
+}
+.input-name {
+  height: 55px;
+  width: 100%;
+  border: solid 1px #bababa;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding: 0 13px;
+}
+.input-name:focus {
+  border: solid 1px #009dff;
+  outline: none;
 }

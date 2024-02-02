@@ -13,6 +13,13 @@ table {
   text-align: left;
   border-collapse: collapse;
   table-layout: fixed;
+  counter-reset: rowCount;
+}
+table > tbody > tr > td.number {
+  counter-increment: rowCount;
+}
+table > tbody > tr > td:first-child::before {
+  content: counter(rowCount);
 }
 tr {
   width: 100%;
@@ -24,7 +31,7 @@ th {
 td {
   border-bottom: solid 1px #748ca5;
 }
-.edit {
+.edit-btn {
   background-color: #7ea8d9;
   color: white;
 }
