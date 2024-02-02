@@ -27,6 +27,19 @@ app.get('/create', (req, res) => {
   res.render('create.ejs');
 });
 
+// 新規登録API
+app.post('/create', (req, res) => {
+  try {
+    connection.query('INSERT INTO memo (name) VALUES (?)', [req.body.name], (error, results) => {
+      connection.query('SELECT * FROM memo', (error, results) => {
+        res.redirect('/');
+      });
+    });
+  } catch (e) {
+    console.log(e);
+  }
+});
+
 // 編集画面
 app.get('/edit/:id', (req, res) => {
   res.render('edit.ejs');
